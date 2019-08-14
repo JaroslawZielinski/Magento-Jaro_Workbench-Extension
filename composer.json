@@ -1,5 +1,5 @@
 {
-  "name": "jaroslawzielinski/jaro_workbench",
+  "name": "jaroslawzielinski/workbench_myscript",
   "type": "magento-module",
   "description": "workbench for myscript",
   "require": {
