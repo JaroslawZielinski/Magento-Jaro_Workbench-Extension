@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Workbench_PlainTable>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Workbench_PlainTable>
+    </modules>
+</config>

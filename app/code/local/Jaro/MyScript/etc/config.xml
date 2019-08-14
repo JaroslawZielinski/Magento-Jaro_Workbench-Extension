@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Jaro_MyScript>
+            <version>0.1.0</version>
+        </Jaro_MyScript>
+    </modules>
+    <global>
+        <models>
+            <jaro_myscript>
+                <class>Jaro_MyScript_Model</class>
+                <resourceModel>jaro_myscript_resource</resourceModel>
+            </jaro_myscript>
+            <jaro_myscript_resource>
+                <class>Jaro_MyScript_Model_Resource</class>
+            </jaro_myscript_resource>
+        </models>
+        <blocks>
+            <jaro_myscript>
+                <class>Jaro_MyScript_Block</class>
+            </jaro_myscript>
+        </blocks>
+        <helpers>
+            <jaro_myscript>
+                <class>Jaro_MyScript_Helper</class>
+            </jaro_myscript>
+        </helpers>
+        <resources>
+            <jaro_myscript_setup>
+                <setup>
+                    <module>Jaro_MyScript</module>
+                </setup>
+            </jaro_myscript_setup>
+        </resources>
+    </global>
+</config>

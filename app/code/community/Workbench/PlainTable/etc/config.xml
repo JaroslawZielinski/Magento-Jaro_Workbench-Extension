@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Workbench_PlainTable>
+            <version>0.1.0</version>
+        </Workbench_PlainTable>
+    </modules>
+    <global>
+        <models>
+            <workbench_plaintable>
+                <class>Workbench_PlainTable_Model</class>
+                <resourceModel>workbench_plaintable_resource</resourceModel>
+            </workbench_plaintable>
+            <workbench_plaintable_resource>
+                <class>Workbench_PlainTable_Model_Resource</class>
+            </workbench_plaintable_resource>
+        </models>
+        <blocks>
+            <workbench_plaintable>
+                <class>Workbench_PlainTable_Block</class>
+            </workbench_plaintable>
+        </blocks>
+        <helpers>
+            <workbench_plaintable>
+                <class>Workbench_PlainTable_Helper</class>
+            </workbench_plaintable>
+        </helpers>
+        <resources>
+            <workbench_plaintable_setup>
+                <setup>
+                    <module>Workbench_PlainTable</module>
+                </setup>
+            </workbench_plaintable_setup>
+        </resources>
+    </global>
+</config>
