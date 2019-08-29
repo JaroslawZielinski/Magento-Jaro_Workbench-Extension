@@ -1,6 +1,9 @@
 #Workbench PlainTable
 app/etc/modules/Workbench_PlainTable.xml   app/etc/modules/Workbench_PlainTable.xml
 app/code/community/Workbench/PlainTable/   app/code/community/Workbench/PlainTable/
+app/design/frontend/workbench/default/   app/design/frontend/workbench/default/  
+skin/frontend/workbench/default/   skin/frontend/workbench/default/
+index.php.template index.php.template
 
 #Jaro MyScript
 app/etc/modules/Jaro_MyScript.xml   app/etc/modules/Jaro_MyScript.xml

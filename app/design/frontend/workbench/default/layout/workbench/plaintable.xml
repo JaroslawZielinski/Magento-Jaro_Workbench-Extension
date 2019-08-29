@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+    <plaintable_page>
+        <reference name="root">
+            <reference name="head">
+                <remove name="js_cookies"/>
+                <remove name="optional_zip_countries"/>
+            </reference>
+
+            <reference name="header">
+                <remove name="top.search"/>
+                <remove name="store_language"/>
+            </reference>
+
+            <remove name="global_notices"/>
+
+            <remove name="breadcrumbs"/>
+
+            <refernece name="footer">
+                <remove name="store_switcher"/>
+                <remove name="footer_links"/>
+            </refernece>
+
+            <reference name="before_body_end">
+                <remove name="global_cookie_notice"/>
+            </reference>
+        </reference>
+
+        <reference name="content">
+            <block type="core/template" name="my-content" template="workbench/plaintable/mycontent.phtml" />
+        </reference>
+    </plaintable_page>
+
+    <default>
+        <!-- apply the layout handle defined above -->
+        <update handle="plaintable_page"/>
+    </default>
+</layout>
