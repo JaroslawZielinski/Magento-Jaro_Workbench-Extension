@@ -1,0 +1,70 @@
+
+<?php
+/** @var $this Mage_Customer_Block_Form_Register */
+?>
+<div class="task1">
+    <h1><?php echo $this->__('Register form') ?></h1>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <?php echo $this->getChildHtml('form_fields_before')?>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 <?php if (!empty($this->getMessagesBlock()->toHtml())): ?>alert alert-danger<?php endif; ?>">
+        <?php echo $this->getMessagesBlock()->toHtml() ?>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="form-validate" class="scaffold-form" enctype="multipart/form-data">
+            <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
+            <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
+            <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+
+            <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getFormData())->setForceUseCustomerAttributes(true)->toHtml() ?>
+
+            <div class="form-group" style="position: static;">
+                <label for="email_address" ><?php echo $this->__('Email Address') ?></label>
+                <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="email_address" value="<?php echo $this->escapeHtml($this->getFormData()->getEmail()) ?>" title="<?php echo $this->quoteEscape($this->__('Email Address')) ?>" class="input-text validate-email required-entry form-control" placeholder="Enter E-mail" autocomplete="off" />
+                <p class="help-block"></p>
+            </div>
+
+            <?php $_gender = $this->getLayout()->createBlock('customer/widget_gender') ?>
+            <?php if ($_gender->isEnabled()): ?>
+                <?php echo $_gender->setGender($this->getFormData()->getGender())->toHtml() ?>
+            <?php endif ?>
+
+            <div class="form-group" style="position: static;">
+                <label for="password"><?php echo $this->__('Password') ?></label>
+                <input type="password" name="password" id="password" title="<?php echo $this->quoteEscape($this->__('Password')) ?>" class="input-text required-entry validate-password form-control" placeholder="Password" />
+                <p class="help-block"></p>
+                <p class="help-block">Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</p>
+            </div>
+
+            <div class="form-group" style="position: static;">
+                <label for="confirmation"><?php echo $this->__('Confirm Password') ?></label>
+                <input type="password" name="confirmation" title="<?php echo $this->quoteEscape($this->__('Confirm Password')) ?>" id="confirmation" class="input-text required-entry validate-cpassword form-control" placeholder="Password" />
+                <p class="help-block"></p>
+            </div>
+
+            <div class="form-group" style="padding-right: 20px; position: static;">
+                <button type="submit" title="<?php echo $this->quoteEscape($this->__('Register')) ?>" class="btn btn-primary"><?php echo $this->__('Register') ?></button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<script type="text/javascript">
+    //<![CDATA[
+        var dataForm = new VarienForm('form-validate', true);
+        <?php if($this->getShowAddressFields()): ?>
+        new RegionUpdater('country', 'region', 'region_id', <?php echo $this->helper('directory')->getRegionJson() ?>, undefined, 'zip');
+        <?php endif; ?>
+    //]]>
+</script>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <workbench translate="label" module="workbench_plaintable">
+            <label>Workbench</label>
+            <sort_order>0</sort_order>
+        </workbench>
+    </tabs>
+    <sections>
+        <plaintable_general translate="label" module="workbench_plaintable">
+            <label>Plain Table</label>
+            <tab>workbench</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <navigation translate="label">
+                    <label>Navigation Menu</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <navigation_routers translate="label">
+                            <label>Navigation Routers</label>
+                            <sort_order>10</sort_order>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <show_in_default>1</show_in_default>
+                            <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+                            <frontend_model>workbench_plaintable/adminhtml_navigation</frontend_model>
+                        </navigation_routers>
+                    </fields>
+                </navigation>
+            </groups>
+        </plaintable_general>
+    </sections>
+</config>

@@ -1,0 +1,15 @@
+<?php
+$currentUrl = Mage::registry($this::CURRENT_SITE_URL);
+$_links = $this->getLinks();
+?>
+<?php if (count($_links) > 0): ?>
+    <ul<?php if ($this->getName()): ?> id="<?php echo $this->getName() ?>"<?php endif; ?> class="navbar-nav mr-auto">
+        <?php foreach ($_links as $_link): ?>
+            <?php $_linkUrl = $_link->getUrl(); ?>
+            <li class="nav-item <?php echo ($currentUrl === $_linkUrl) ? 'active' : '' ?>" <?php echo $_link->getLiParams() ?>>
+            <?php echo $_link->getBeforeText() ?><a class="nav-link" href="<?php echo $_linkUrl ?>"
+                                                    title="<?php echo $_link->getTitle() ?>" <?php echo $_link->getAParams() ?>><?php echo $_link->getLabel() ?></a><?php echo $_link->getAfterText() ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>

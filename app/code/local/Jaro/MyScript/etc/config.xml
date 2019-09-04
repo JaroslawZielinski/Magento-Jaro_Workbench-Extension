@@ -1,30 +1,54 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <config>
     <modules>
         <Jaro_MyScript>
-            <version>0.1.0</version>
+            <version>0.0.6</version>
         </Jaro_MyScript>
     </modules>
     <global>
-        <models>
-            <jaro_myscript>
-                <class>Jaro_MyScript_Model</class>
-                <resourceModel>jaro_myscript_resource</resourceModel>
-            </jaro_myscript>
-            <jaro_myscript_resource>
-                <class>Jaro_MyScript_Model_Resource</class>
-            </jaro_myscript_resource>
-        </models>
-        <blocks>
-            <jaro_myscript>
-                <class>Jaro_MyScript_Block</class>
-            </jaro_myscript>
-        </blocks>
+        <resources>
+        </resources>
         <helpers>
             <jaro_myscript>
                 <class>Jaro_MyScript_Helper</class>
             </jaro_myscript>
         </helpers>
+        <models>
+            <jaro_myscript>
+                <class>Jaro_MyScript_Model</class>
+                <resourceModel>jaro_myscript_mysql4</resourceModel>
+            </jaro_myscript>
+            <jaro_myscript_mysql4>
+                <class>Jaro_MyScript_Model_Mysql4</class>
+                <entities>
+                    <verses>
+                        <table>bibleteacher_verses</table>
+                    </verses>
+                    <teachings>
+                        <table>bibleteacher_verse_teachings</table>
+                    </teachings>
+                    <types>
+                        <table>bibleteacher_verse_types</table>
+                    </types>
+                    <translations>
+                        <table>bibleteacher_verse_translations</table>
+                    </translations>
+                    <numberings>
+                        <table>bibleteacher_verse_numberings</table>
+                    </numberings>
+                    <bible>
+                        <table>bibleteacher_bible</table>
+                    </bible>
+                    <bible>
+                        <table>bibleteacher_bible</table>
+                    </bible>
+                    <news>
+                        <table>news</table>
+                    </news>
+                </entities>
+            </jaro_myscript_mysql4>
+        </models>
+
         <resources>
             <jaro_myscript_setup>
                 <setup>
@@ -32,5 +56,63 @@
                 </setup>
             </jaro_myscript_setup>
         </resources>
+
+        <blocks>
+            <jaro_myscript>
+                <class>Jaro_MyScript_Block</class>
+            </jaro_myscript>
+        </blocks>
+
+        <events>
+            <on_teachings_after_save_action>
+                <observers>
+                    <jaro_myscript>
+                        <class>Jaro_MyScript_Model_Observer</class>
+                        <method>onEventAfterSaveAction</method>
+                    </jaro_myscript>
+                </observers>
+            </on_teachings_after_save_action>
+        </events>
     </global>
+    <crontab>
+        <jobs>
+            <cronexample_crontest>
+                <schedule>
+                    <cron_expr>*/1 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>jaro_myscript/cron::correctFiles</model>
+                </run>
+            </cronexample_crontest>
+        </jobs>
+    </crontab>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Jaro_MyScript>
+                    <files>
+                        <default>Jaro_MyScript.csv</default>
+                    </files>
+                </Jaro_MyScript>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <jaro_myscript>
+                    <file>jaro_myscript.xml</file>
+                </jaro_myscript>
+            </updates>
+        </layout>
+    </adminhtml>
+    <admin>
+        <routers>
+            <task1>
+                <use>admin</use>
+                <args>
+                    <module>Jaro_MyScript</module>
+                    <frontName>task1</frontName>
+                </args>
+            </task1>
+        </routers>
+    </admin>
 </config>

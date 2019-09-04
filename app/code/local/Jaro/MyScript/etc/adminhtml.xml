@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <jaro translate="title" module="jaro_myscript">
+            <title>Jaro</title>
+            <sort_order>0</sort_order>
+            <children>
+                <jaro_myscript_news>
+                    <title>News</title>
+                    <sort_order>0</sort_order>
+                    <action>task1/news/index</action>
+                </jaro_myscript_news>
+            </children>
+        </jaro>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <jaro translate="title" module="jaro_myscript">
+                        <title>Jaro</title>
+                        <children>
+                            <jaro_myscript_news translate="title">
+                                <title>News</title>
+                                <sort_order>0</sort_order>
+                            </jaro_myscript_news>
+                        </children>>
+                    </jaro>
+                </children>      
+            </admin>
+        </resources>
+    </acl>
+</config>

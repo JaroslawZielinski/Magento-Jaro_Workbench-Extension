@@ -4,6 +4,9 @@
         <Workbench_PlainTable>
             <active>true</active>
             <codePool>community</codePool>
+            <depends>
+                <Mage_Customer/>
+            </depends>
         </Workbench_PlainTable>
     </modules>
 </config>

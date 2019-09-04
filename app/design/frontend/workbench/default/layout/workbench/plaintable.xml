@@ -6,9 +6,18 @@
             <reference name="head">
                 <remove name="js_cookies"/>
                 <remove name="optional_zip_countries"/>
+                <action method="addItem"><type>skin_css</type><name>css/bootstrap.min.css</name></action>
+                <action method="addItem"><type>skin_css</type><name>css/bootstrap-theme.min.css</name></action>
+                <action method="addItem"><type>skin_css</type><name>css/task1.css</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/jquery-3.3.1.min.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/popper.min.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/bootstrap.min.js</name></action>
             </reference>
 
             <reference name="header">
+                <block type="workbench_plaintable/template_links" name="top.links" as="topLinks">
+                    <action method="removeLinkByUrl"><url helper="customer/getAccountUrl"/></action>
+                </block>
                 <remove name="top.search"/>
                 <remove name="store_language"/>
             </reference>
@@ -28,7 +37,8 @@
         </reference>
 
         <reference name="content">
-            <block type="core/template" name="my-content" template="workbench/plaintable/mycontent.phtml" />
+            <remove name="page_content_heading"/>
+            <block type="core/template" name="my-content" template="workbench/plaintable/mycontent.phtml"/>
         </reference>
     </plaintable_page>
 
@@ -36,4 +46,22 @@
         <!-- apply the layout handle defined above -->
         <update handle="plaintable_page"/>
     </default>
+
+    <customer_logged_out>
+        <reference name="top.links">
+            <action method="addLink" translate="label title " module="customer"><label>Register</label><url helper="customer/getRegisterUrl" /><title>Register</title><prepare/><urlParams/><position>110</position><li/><a/></action>
+        </reference>
+    </customer_logged_out>
+
+    <customer_account_login translate="label">
+        <reference name="content">
+            <remove name="my-content" />
+        </reference>
+    </customer_account_login>
+
+    <customer_account_create>
+        <reference name="content">
+            <remove name="my-content" />
+        </reference>
+    </customer_account_create>
 </layout>
