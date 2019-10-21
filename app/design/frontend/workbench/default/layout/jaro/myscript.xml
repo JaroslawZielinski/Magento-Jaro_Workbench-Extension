@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <base_for_jaro_myscript_news_grid>
+        <update handle="page_one_column"/>
+        <remove name="my-content"/>
+
+        <reference name="head">
+            <action method="addItem">
+                <type>js_css</type>
+                <name>jaro_myscript/content.css</name>
+            </action>
+        </reference>
+    </base_for_jaro_myscript_news_grid>
+
+    <jaro_myscript_news_index>
+        <update handle="base_for_jaro_myscript_news_grid"/>
+
+        <reference name="content">
+            <block type="jaro_myscript/news" name="jaro_mycript_search" template="jaro/search.phtml"/>
+            <block type="jaro_myscript/news" name="jaro_mycript_content" template="jaro/newsgrid.phtml"/>
+        </reference>
+    </jaro_myscript_news_index>
+
+    <jaro_myscript_news_view>
+        <update handle="base_for_jaro_myscript_news_grid"/>
+
+        <reference name="content">
+            <block type="jaro_myscript/news" name="jaro_mycript_view" template="jaro/view.phtml"/>
+            <block type="jaro_myscript/news" name="jaro_mycript_links" template="jaro/links.phtml"/>
+        </reference>
+    </jaro_myscript_news_view>
+</layout>

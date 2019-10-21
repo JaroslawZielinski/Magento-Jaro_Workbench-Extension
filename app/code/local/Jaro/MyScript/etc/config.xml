@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Jaro_MyScript>
-            <version>0.0.6</version>
+            <version>0.1.1</version>
         </Jaro_MyScript>
     </modules>
     <global>
@@ -21,27 +21,6 @@
             <jaro_myscript_mysql4>
                 <class>Jaro_MyScript_Model_Mysql4</class>
                 <entities>
-                    <verses>
-                        <table>bibleteacher_verses</table>
-                    </verses>
-                    <teachings>
-                        <table>bibleteacher_verse_teachings</table>
-                    </teachings>
-                    <types>
-                        <table>bibleteacher_verse_types</table>
-                    </types>
-                    <translations>
-                        <table>bibleteacher_verse_translations</table>
-                    </translations>
-                    <numberings>
-                        <table>bibleteacher_verse_numberings</table>
-                    </numberings>
-                    <bible>
-                        <table>bibleteacher_bible</table>
-                    </bible>
-                    <bible>
-                        <table>bibleteacher_bible</table>
-                    </bible>
                     <news>
                         <table>news</table>
                     </news>
@@ -104,6 +83,24 @@
             </updates>
         </layout>
     </adminhtml>
+    <frontend>
+        <routers>
+            <jaro_myscript>
+                <use>standard</use>
+                <args>
+                    <module>Jaro_MyScript</module>
+                    <frontName>task_1</frontName>
+                </args>
+            </jaro_myscript>
+        </routers>
+        <layout>
+            <updates>
+                <jaro_myscript module="Jaro_MyScript">
+                    <file>jaro/myscript.xml</file>
+                </jaro_myscript>
+            </updates>
+        </layout>
+    </frontend>
     <admin>
         <routers>
             <task1>
@@ -115,4 +112,11 @@
             </task1>
         </routers>
     </admin>
+    <default>
+        <plaintable_general>
+            <navigation>
+                <navigation_routers>a:2:{s:18:"_1571982790353_353";a:4:{s:4:"name";s:5:"Admin";s:4:"path";s:5:"admin";s:5:"order";s:3:"120";s:11:"auth_status";s:1:"0";}s:18:"_1571982799438_438";a:4:{s:4:"name";s:4:"News";s:4:"path";s:17:"task_1/news/index";s:5:"order";s:3:"110";s:11:"auth_status";s:1:"1";}}</navigation_routers>
+            </navigation>
+        </plaintable_general>
+    </default>
 </config>

@@ -61,12 +61,12 @@ class Jaro_MyScript_Block_Task1_News_Edit extends Mage_Adminhtml_Block_Widget_Fo
      */
     public function getBackUrl()
     {
-        return $this->getUrl('*/news/index');
+        return $this->getUrl('*/adminhtml_news/index');
     }
 
     public function getDeleteUrl()
     {
-        return $this->getUrl('*/news/delete', array($this->_objectId => $this->getRequest()->getParam($this->_objectId)));
+        return $this->getUrl('*/adminhtml_news/delete', array($this->_objectId => $this->getRequest()->getParam($this->_objectId)));
     }
 
     /**

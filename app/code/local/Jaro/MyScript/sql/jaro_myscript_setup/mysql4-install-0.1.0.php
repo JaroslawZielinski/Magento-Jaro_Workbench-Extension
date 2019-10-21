@@ -23,12 +23,6 @@ $table = $installer->getConnection()
         'nullable'  => false,
         'default'   => '0',
     ), 'Is Active')
-    ->addColumn('created_at', Varien_Db_Ddl_Table::TYPE_TIMESTAMP, null, array(
-        'nullable'  => false,
-    ), 'Created At')
-    ->addColumn('updated_at', Varien_Db_Ddl_Table::TYPE_TIMESTAMP, null, array(
-        'nullable'  => false,
-    ), 'Updated At')
     ->addColumn('author_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
         'unsigned'  => true,
         'nullable'  => false,

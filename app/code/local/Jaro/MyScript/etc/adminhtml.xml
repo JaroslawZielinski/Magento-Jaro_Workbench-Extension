@@ -8,7 +8,7 @@
                 <jaro_myscript_news>
                     <title>News</title>
                     <sort_order>0</sort_order>
-                    <action>task1/news/index</action>
+                    <action>task1/adminhtml_news/index</action>
                 </jaro_myscript_news>
             </children>
         </jaro>

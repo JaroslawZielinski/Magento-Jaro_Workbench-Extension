@@ -17,6 +17,6 @@ class Jaro_MyScript_Block_Task1_News extends Mage_Adminhtml_Block_Widget_Grid_Co
 
     public function getCreateUrl()
     {
-        return $this->getUrl('*/news/new');
+        return $this->getUrl('*/adminhtml_news/new');
     }
 }

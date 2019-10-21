@@ -1,0 +1,10 @@
+.col-main {
+    padding: 40px;
+}
+tr.news-data{
+    cursor: pointer;
+}
+tr.news-data:hover{
+    text-decoration: underline;
+    color: #0A246A;
+}

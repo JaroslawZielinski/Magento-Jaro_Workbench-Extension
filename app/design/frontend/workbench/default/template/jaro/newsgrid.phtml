@@ -1,0 +1,51 @@
+<?php
+$parameters = $this->getRequest()->getParams();
+$news = $this->getCustomizedCollection($parameters);
+$limit = isset($parameters['limit']) ? $parameters['limit'] : '';
+if (!empty($limit)) {
+    $this->setPagerHtml($news, $limit);
+} else {
+    $this->setPagerHtml($news);
+}
+?>
+
+<?=$this->getPagerHtml()?>
+<?php if ($news->getSize()) : ?>
+    <table class="data-table table table-striped" id="my-news-table">
+        <colgroup>
+            <col width="1">
+            <col width="30">
+            <col width="30">
+            <col width="200">
+            <col width="1">
+            <col width="1">
+        </colgroup>
+        <thead>
+        <tr class="first last">
+            <th><?=Mage::helper('jaro_myscript')->__('ID')?></th>
+            <th><?=Mage::helper('jaro_myscript')->__('Name')?></th>
+            <th><?=Mage::helper('jaro_myscript')->__('Description')?></th>
+            <th><?=Mage::helper('jaro_myscript')->__('Date')?></th>
+            <th><?=Mage::helper('jaro_myscript')->__('Active')?></th>
+            <th><?=Mage::helper('jaro_myscript')->__('Author')?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($news as $newsItem) : ?>
+            <tr class="news-data" onclick="window.location.href = '<?=$this->getViewUrl($newsItem)?>'">
+                <td><?=$newsItem->getNewsId()?></td>
+                <td><?=$newsItem->getName()?></td>
+                <td><?=$newsItem->getDescription()?></td>
+                <td><?=Mage::helper('core')->formatDate($newsItem->getCreatedAt(), 'yyyy-MM-dd')?></td>
+                <td><?=$this->getYesNoOption($newsItem->getIsActive())?></td>
+                <td><?=$newsItem->getEmail()?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+    <?=$this->getPagerHtml()?>
+    <script type="text/javascript">decorateTable('my-news-table');</script>
+<?php else: ?>
+    <p><?=Mage::helper('jaro_myscript')->__('There is no news available.')?></p>
+<?php endif ?>
+

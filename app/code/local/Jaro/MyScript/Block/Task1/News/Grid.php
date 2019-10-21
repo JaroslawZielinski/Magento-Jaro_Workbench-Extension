@@ -17,18 +17,8 @@ class Jaro_MyScript_Block_Task1_News_Grid extends Mage_Adminhtml_Block_Widget_Gr
 
     protected function _prepareCollection()
     {
-        $collection =
-            Mage::getModel('jaro_myscript/news')
-                ->getCollection();
-
-        $collection
-            ->getSelect()
-            ->join([
-                'ce' => Mage::getSingleton('core/resource')->getTableName('customer/entity')
-            ], 'main_table.author_id=ce.entity_id',
-                [
-                    'email' => 'ce.email'
-                ]);
+        /** @var Jaro_MyScript_Model_News $collection */
+        $collection = Mage::getModel('jaro_myscript/news')->getFullDataCollection();
 
         $this->setCollection($collection);
         return parent::_prepareCollection();
@@ -78,7 +68,7 @@ class Jaro_MyScript_Block_Task1_News_Grid extends Mage_Adminhtml_Block_Widget_Gr
 
     public function getRowUrl($row)
     {
-        return $this->getUrl('*/news/edit', array('id' => $row->getId()));
+        return $this->getUrl('*/adminhtml_news/edit', array('id' => $row->getId()));
     }
 
     protected function _prepareMassaction()

@@ -37,7 +37,7 @@ class Jaro_MyScript_Block_Task1_News_Edit_Form extends Mage_Adminhtml_Block_Widg
         $modelTitle = $this->_getModelTitle();
         $form = new Varien_Data_Form([
             'id' => 'edit_form',
-            'action' => $this->getUrl('*/news/save'),
+            'action' => $this->getUrl('*/adminhtml_news/save'),
             'method' => 'post'
         ]);
 
