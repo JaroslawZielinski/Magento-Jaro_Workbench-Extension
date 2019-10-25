@@ -3,6 +3,7 @@
 
     <base_for_jaro_myscript_news_grid>
         <update handle="page_one_column"/>
+
         <remove name="my-content"/>
 
         <reference name="head">
@@ -17,17 +18,15 @@
         <update handle="base_for_jaro_myscript_news_grid"/>
 
         <reference name="content">
-            <block type="jaro_myscript/news" name="jaro_mycript_search" template="jaro/search.phtml"/>
-            <block type="jaro_myscript/news" name="jaro_mycript_content" template="jaro/newsgrid.phtml"/>
+            <block type="jaro_myscript/news" name="jaro_mycript_content" template="jaro/newsgrid.phtml">
+                <block type="jaro_myscript/news" name="jaro_mycript_search">
+                    <action method="setTemplate" ifconfig="jaro_myscript/settings/search_enable">
+                        <template>jaro/search.phtml</template>
+                    </action>
+                </block>
+                <block type="core/template" name="news.form.row" template="jaro/newsformrow.phtml"/>
+                <block type="core/template" name="news.row" template="jaro/newsrow.phtml"/>
+            </block>
         </reference>
     </jaro_myscript_news_index>
-
-    <jaro_myscript_news_view>
-        <update handle="base_for_jaro_myscript_news_grid"/>
-
-        <reference name="content">
-            <block type="jaro_myscript/news" name="jaro_mycript_view" template="jaro/view.phtml"/>
-            <block type="jaro_myscript/news" name="jaro_mycript_links" template="jaro/links.phtml"/>
-        </reference>
-    </jaro_myscript_news_view>
 </layout>

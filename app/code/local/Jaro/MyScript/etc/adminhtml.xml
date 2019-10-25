@@ -24,8 +24,25 @@
                                 <title>News</title>
                                 <sort_order>0</sort_order>
                             </jaro_myscript_news>
-                        </children>>
+                        </children>
                     </jaro>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <jaro_myscript translate="title" module="jaro_myscript">
+                                        <title>Task1</title>
+                                        <sort_order>0</sort_order>
+                                        <children>
+                                            <settings>
+                                                <title>Settings</title>
+                                            </settings>
+                                        </children>
+                                    </jaro_myscript>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
                 </children>      
             </admin>
         </resources>

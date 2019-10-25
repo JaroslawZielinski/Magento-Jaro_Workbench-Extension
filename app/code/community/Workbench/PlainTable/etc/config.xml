@@ -54,7 +54,7 @@
     <default>
         <plaintable_general>
             <navigation>
-                <navigation_routers>a:1:{s:18:"_1570513587129_129";a:4:{s:4:"name";s:5:"Admin";s:4:"path";s:5:"admin";s:5:"order";s:3:"120";s:11:"auth_status";s:1:"0";}}</navigation_routers>
+                <navigation_routers>a:1:{s:18:"_1571982790353_353";a:4:{s:4:"name";s:5:"Admin";s:4:"path";s:5:"admin";s:5:"order";s:3:"120";s:11:"auth_status";s:1:"0";}}</navigation_routers>
             </navigation>
         </plaintable_general>
     </default>

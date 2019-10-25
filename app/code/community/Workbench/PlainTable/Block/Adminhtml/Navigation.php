@@ -6,6 +6,8 @@
 class Workbench_PlainTable_Block_Adminhtml_Navigation
     extends Mage_Adminhtml_Block_System_Config_Form_Field_Array_Abstract
 {
+    const WORKBENCH_PLAINTABLE_NAVIGATION_CONFIG = 'plaintable_general/navigation/navigation_routers';
+
     protected $_itemRenderer;
 
     /**
@@ -64,5 +66,17 @@ class Workbench_PlainTable_Block_Adminhtml_Navigation
                 ->calcOptionHash($row->getData('auth_status')),
             'selected="selected"'
         );
+    }
+
+    protected function _getElementHtml(Varien_Data_Form_Element_Abstract $element)
+    {
+        $this->setElement($element);
+
+        if (!$this->getElement()->getData('value')) {
+            $value = unserialize(Mage::getStoreConfig(self::WORKBENCH_PLAINTABLE_NAVIGATION_CONFIG));
+            $this->getElement()->setData('value', $value);
+        }
+
+        return parent::_getElementHtml($element);
     }
 }

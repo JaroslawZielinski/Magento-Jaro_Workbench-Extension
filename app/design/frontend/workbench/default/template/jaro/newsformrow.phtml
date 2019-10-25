@@ -1,0 +1,55 @@
+<?php
+    if (Mage::getSingleton('customer/session')->isLoggedIn()) {
+        $customer = Mage::getSingleton('customer/session')->getCustomer();
+        $email = $customer->getEmail();
+    }
+    $newsItem = $this->getDataSetDefault('news_item', new Varien_Object([
+            'news_id' => '',
+            'name' => '',
+            'description' => '',
+            'created_at' =>(new \DateTime())->format('Y-m-d H:i:s'),
+            'is_active' => '0',
+            'email' => $email ?? ''
+    ]));
+    $isNewsItem = !empty($newsItem->getNewsId());
+?>
+<?php if ($isNewsItem):?>
+    <td><?=$newsItem->getNewsId()?></td>
+<?php else: ?>
+    <th scope="row"><input type="text" class="form-control" disabled style="width: 30px;"></th>
+<?php endif;?>
+<td>
+    <input <?php if ($isNewsItem):?>id="edited-name-<?=$newsItem->getNewsId()?>"<?= $newsItem->getName()?><?php endif;?> name="name" value="<?php if ($isNewsItem):?><?=$newsItem->getName()?><?php endif;?>" type="text" class="form-control" placeholder="Enter Name" autocomplete="off">
+</td>
+<td>
+    <input <?php if ($isNewsItem):?>id="edited-description-<?=$newsItem->getNewsId()?>"<?php endif;?> name="description" value="<?php if ($isNewsItem):?><?=$newsItem->getDescription()?><?php endif;?>" type="text" class="form-control" placeholder="Enter Description" autocomplete="off">
+</td>
+<td><?=Mage::helper('core')->formatDate($newsItem->getCreatedAt(), 'yyyy-MM-dd')?></td>
+<td>
+    <select <?php if ($isNewsItem):?>id="edited-is_active-<?=$newsItem->getNewsId()?>"<?php endif;?> name="is_active" class="form-control" style="width: 150px;">
+    <option value="1" <?php if (1 == $newsItem->getIsActive()):?>selected<?php endif;?>>True</option>
+    <option value="0" <?php if (0 == $newsItem->getIsActive()):?>selected<?php endif;?>>False</option>
+    </select>
+</td>
+<td><?=$newsItem->getEmail()?></td>
+<td>
+    <input <?php if ($isNewsItem):?>id="save-item-<?=$newsItem->getNewsId()?>"<?php endif;?> type="submit" class="btn-xs btn-primary" value="Save">
+</td>
+<?php if ($isNewsItem):?>
+<script type="text/javascript">
+    jQuery("input#save-item-<?=$newsItem->getNewsId()?>").on('click', function (element) {
+        jQuery.ajax({
+            url : '{$backendPathEdit}{$newsItem.news_id}',
+            type : 'POST',
+            data: {
+                name: jQuery("#edited-name-<?=$newsItem->getNewsId()?>").val(),
+                description: jQuery("#edited-description-<?=$newsItem->getNewsId()?>").val(),
+                is_active: jQuery("#edited-is_active-<?=$newsItem->getNewsId()?>").val(),
+            }
+        }).done(function(data) {
+            //refresh data
+            jQuery('#news-grid-tbody').html(data);
+        });
+    });
+</script>
+<?php endif;?>

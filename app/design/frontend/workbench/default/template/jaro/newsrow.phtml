@@ -1,0 +1,38 @@
+<?php
+    /** @var  $newsItem */
+    $newsItem = $this->getNewsItem();
+?>
+<tr data-id="<?=$newsItem->getNewsId()?>" class="news-data">
+    <td><?=$newsItem->getNewsId()?></td>
+    <td><?=$newsItem->getName()?></td>
+    <td><?=$newsItem->getDescription()?></td>
+    <td><?=Mage::helper('core')->formatDate($newsItem->getCreatedAt(), 'yyyy-MM-dd')?></td>
+    <td><?=$this->getYesNoOption($newsItem->getIsActive())?></td>
+    <td><?=$newsItem->getEmail()?></td>
+    <td class="action">
+        <button data-id="<?=$newsItem->getNewsId()?>" class="news-delete btn-xs btn-danger">X</button>
+        <button data-id="<?=$newsItem->getNewsId()?>" class="news-edit btn-xs btn-warning">edit</button>
+    </td>
+    <script type="text/javascript">
+        jQuery("button[data-id=<?=$newsItem->getNewsId()?>].news-delete").on('click', function (element) {
+            if (confirm('Are you sure to delete?')) {
+                jQuery.ajax({
+                    url : '{$backendPathDelete}' + '{$newsItem.news_id}',
+                    type : 'POST',
+                }).done(function(data) {
+                    //refresh data
+                    jQuery('#news-grid-tbody').html(data);
+                });
+            }
+        });
+        jQuery("button[data-id=<?=$newsItem->getNewsId()?>].news-edit").on('click', function (element) {
+            jQuery.ajax({
+                url : '{$backendPathEditForm}{$newsItem.news_id}',
+                type : 'POST',
+            }).done(function(data) {
+                //refresh data
+                jQuery("tr#news-row-<?=$newsItem->getNewsId()?>").html(data);
+            });
+        });
+    </script>
+</tr>

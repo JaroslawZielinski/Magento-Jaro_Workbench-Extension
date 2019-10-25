@@ -33,4 +33,17 @@ class Jaro_MyScript_Model_News extends Jaro_MyScript_Model_Abstract
 
         return $collection;
     }
+
+    /**
+     * @param $newsId
+     * @param null $customerId
+     * @return Varien_Object
+     */
+    public function getNewsByNewsId($newsId, $customerId = null)
+    {
+        $collection = $this->getFullDataCollection($customerId);
+        $collection->addFieldToFilter('news_id', ['eq' => $newsId]);
+
+        return $collection->getFirstItem();
+    }
 }
