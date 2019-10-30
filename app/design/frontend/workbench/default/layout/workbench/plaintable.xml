@@ -64,4 +64,11 @@
             <remove name="my-content" />
         </reference>
     </customer_account_create>
+
+    <ajax_controller_elements>
+        <block type="core/template" name="root" template="workbench/plaintable/ajax.phtml" >
+            <action method="setStatus"><status>OK</status></action>
+            <action method="setMessage"><message>Success</message></action>
+        </block>
+    </ajax_controller_elements>
 </layout>

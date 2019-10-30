@@ -1,0 +1,7 @@
+<?php
+
+echo json_encode([
+    "status" => $this->getStatus(),
+    "message" => $this->getMessage(),
+    "html" => $this->getChildHtml($name = '', $useCache = false, $sorted = true)
+]);

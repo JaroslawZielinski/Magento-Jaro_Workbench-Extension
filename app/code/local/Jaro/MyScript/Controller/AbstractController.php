@@ -27,4 +27,12 @@ class Jaro_MyScript_Controller_AbstractController extends Mage_Core_Controller_F
             ->_canRender()
             ->loadLayout();
     }
+
+    /**
+     * @return Mage_Core_Model_Abstract|Mage_Core_Model_Session
+     */
+    protected function _getSession()
+    {
+        return Mage::getSingleton('core/session');    
+    }
 }

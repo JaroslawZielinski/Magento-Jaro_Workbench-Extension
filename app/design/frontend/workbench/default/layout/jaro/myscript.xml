@@ -25,8 +25,20 @@
                     </action>
                 </block>
                 <block type="core/template" name="news.form.row" template="jaro/newsformrow.phtml"/>
-                <block type="core/template" name="news.row" template="jaro/newsrow.phtml"/>
+                <block type="jaro_myscript/news" name="news.row" template="jaro/newsrow.phtml"/>
             </block>
         </reference>
     </jaro_myscript_news_index>
+
+    <jaro_myscript_ajax_news_delete>
+        <update handle="ajax_controller_elements"/>
+    </jaro_myscript_ajax_news_delete>
+
+    <jaro_myscript_ajax_news_edit>
+        <update handle="ajax_controller_elements"/>
+
+        <reference name="root">
+            <block type="core/template" name="news.form.row" template="jaro/newsformrow.phtml"/>
+        </reference>
+    </jaro_myscript_ajax_news_edit>
 </layout>

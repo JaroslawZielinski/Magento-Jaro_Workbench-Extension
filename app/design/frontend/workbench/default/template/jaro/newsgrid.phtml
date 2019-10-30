@@ -12,81 +12,64 @@ if (!empty($limit)) {
 <div class="page-title">
     <h1><?= Mage::helper('jaro_myscript')->__('News List') ?></h1>
 </div>
+
+<div class="row">
+    <div class="btn-group-toggle col-md-12" data-toggle="buttons">
+        <label class="btn btn-primary">
+            <input id="news-add" type="checkbox" checked autocomplete="off"> Add New Item
+        </label>
+    </div>
+    <script type="text/javascript">
+        jQuery(function () {
+            jQuery('#news-add').change(function() {
+                if (jQuery(this).prop('checked')) {
+                    jQuery("#news-add-form-section").show();
+                } else {
+                    jQuery("form#form-add")[0].reset();
+                    jQuery("#news-add-form-section").hide();
+                }
+            })
+        });
+    </script>
+</div>
+<br>
+<div id="news-add-form-section" class="row" style="display:none;">
+    <div class="col-md-12">
+        <form id="form-add" action="<?=$this->getUrl('jaro_myscript/news/add')?>" method="post">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th><?=Mage::helper('jaro_myscript')->__('ID')?></th>
+                        <th><?=Mage::helper('jaro_myscript')->__('Name')?></th>
+                        <th><?=Mage::helper('jaro_myscript')->__('Description')?></th>
+                        <th><?=Mage::helper('jaro_myscript')->__('Created At')?></th>
+                        <th><?=Mage::helper('jaro_myscript')->__('Updated At')?></th>
+                        <th><?=Mage::helper('jaro_myscript')->__('Active')?></th>
+                        <th><?=Mage::helper('jaro_myscript')->__('Author')?></th>
+                        <th><?=Mage::helper('jaro_myscript')->__('Action')?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <?=$this->getChildHtml('news.form.row')?>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
 <?php if ($news->getSize()) : ?>
-    <div class="row">
-        <div class="btn-group-toggle col-md-12" data-toggle="buttons">
-            <label class="btn btn-primary">
-                <input id="news-add" type="checkbox" checked autocomplete="off"> Add New Item
-            </label>
-        </div>
-        <script type="text/javascript">
-            jQuery(function () {
-                jQuery('#news-add').change(function() {
-                    if (jQuery(this).prop('checked')) {
-                        jQuery("#news-add-form-section").show();
-                    } else {
-                        jQuery("form#form-add")[0].reset();
-                        jQuery("#news-add-form-section").hide();
-                    }
-                })
-            });
-        </script>
-    </div>
-    <br>
-    <div id="news-add-form-section" class="row" style="display:none;">
-        <div class="col-md-12">
-            <form id="form-add" action="#" method="post">
-                <table class="table">
-                    <thead class="thead-light">
-                        <tr>
-                            <th><?=Mage::helper('jaro_myscript')->__('ID')?></th>
-                            <th><?=Mage::helper('jaro_myscript')->__('Name')?></th>
-                            <th><?=Mage::helper('jaro_myscript')->__('Description')?></th>
-                            <th><?=Mage::helper('jaro_myscript')->__('Date')?></th>
-                            <th><?=Mage::helper('jaro_myscript')->__('Active')?></th>
-                            <th><?=Mage::helper('jaro_myscript')->__('Author')?></th>
-                            <th><?=Mage::helper('jaro_myscript')->__('Action')?></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <?=$this->getChildHtml('news.form.row')?>
-                        </tr>
-                    </tbody>
-                </table>
-            </form>
-            <script type="text/javascript">
-                jQuery("form#form-add").submit(function (event) {
-                    event.preventDefault();
-
-                    //ajax call
-                    jQuery.ajax({
-                        url : '{$backendPathAdd}',
-                        type : 'POST',
-                        data : jQuery('form#form-add').serialize()
-                    }).done(function(data) {
-                        //refresh data
-                        jQuery('#news-grid-tbody').html(data);
-                        //reset form
-                        jQuery("form#form-add")[0].reset();
-                        //hide widget
-                        jQuery('#news-add').bootstrapToggle('on')
-                    });
-
-                    return false;
-                });
-            </script>
-        </div>
-    </div>
     <?=$this->getChildHtml('jaro_mycript_search')?>
     <?=$this->getPagerHtml()?>
     <table class="data-table table table-striped" id="my-news-table">
         <colgroup>
-            <col width="1">
-            <col width="30">
-            <col width="30">
-            <col width="200">
-            <col width="1">
+            <col width="16">
+            <col width="12">
+            <col width="12">
+            <col width="250">
+            <col width="250">
+            <col width="12">
+            <col width="250">
             <col width="1">
         </colgroup>
         <thead>
@@ -94,7 +77,8 @@ if (!empty($limit)) {
             <th><?=Mage::helper('jaro_myscript')->__('ID')?></th>
             <th><?=Mage::helper('jaro_myscript')->__('Name')?></th>
             <th><?=Mage::helper('jaro_myscript')->__('Description')?></th>
-            <th><?=Mage::helper('jaro_myscript')->__('Date')?></th>
+            <th><?=Mage::helper('jaro_myscript')->__('Created At')?></th>
+            <th><?=Mage::helper('jaro_myscript')->__('Updated At')?></th>
             <th><?=Mage::helper('jaro_myscript')->__('Active')?></th>
             <th><?=Mage::helper('jaro_myscript')->__('Author')?></th>
             <th><?=Mage::helper('jaro_myscript')->__('Action')?></th>
