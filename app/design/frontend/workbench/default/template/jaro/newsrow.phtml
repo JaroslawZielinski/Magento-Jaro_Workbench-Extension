@@ -12,7 +12,7 @@
     <td><?=$newsItem->getEmail()?></td>
     <td class="action">
         <button data-id="<?=$newsItem->getNewsId()?>" class="news-delete btn-xs btn-danger">X</button>
-        <button data-id="<?=$newsItem->getNewsId()?>" class="news-edit btn-xs btn-warning" style="padding: 0px 50px 0px 50px;">edit</button>
+        <button data-id="<?=$newsItem->getNewsId()?>" class="news-edit btn-xs btn-warning">edit</button>
     </td>
     <script type="text/javascript">
         jQuery("button[data-id=<?=$newsItem->getNewsId()?>].news-delete").on('click', function (element) {
