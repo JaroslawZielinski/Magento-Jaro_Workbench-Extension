@@ -21,7 +21,7 @@ class Workbench_PlainTable_Block_Adminhtml_Navigation
         $helper = Mage::helper('workbench_plaintable');
 
         $this->addColumn('name', array(
-            'style' => 'width:200px',
+            'style' => 'width:100px',
             'label' => $helper->__('Display Name'),
         ));
 
@@ -31,14 +31,13 @@ class Workbench_PlainTable_Block_Adminhtml_Navigation
         ));
 
         $this->addColumn('order', array(
-            'style' => 'width:80px',
+            'style' => 'width:40px',
             'label' => $helper->__('Sort Order'),
         ));
 
         $this->addColumn('auth_status', array(
-            'style' => 'width:80px',
             'label' => $helper->__('Auth Status'),
-            'renderer' => $this->_getRenderer()
+            'renderer' => $this->_getRenderer()->setExtraParams('style="width:60px;"')
         ));
     }
 
