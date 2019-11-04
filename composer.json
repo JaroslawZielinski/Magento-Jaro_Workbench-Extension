@@ -1,7 +1,7 @@
 {
-  "name": "jaroslawzielinski/workbench_myscript",
+  "name": "jaroslawzielinski/workbench_plaintable",
   "type": "magento-module",
-  "description": "workbench for myscript",
+  "description": "workbench plain table for my scripts",
   "require": {
   }, 
   "authors":[
@@ -12,15 +12,10 @@
   "extra": {
     "map" : [
       ["app/etc/modules/Workbench_PlainTable.xml", "app/etc/modules/Workbench_PlainTable.xml"],
-      ["app/code/community/Workbench/PlainTable", "app/code/community/Workbench/PlainTable"],  
+      ["app/code/community/Workbench/PlainTable", "app/code/community/Workbench/PlainTable"],
       ["app/design/frontend/workbench/default", "app/design/frontend/workbench/default"],
-      ["app/design/adminhtml/default/default/layout/jaro_myscript.xml", "app/design/adminhtml/default/default/layout/jaro_myscript.xml"],
-      ["app/design/adminhtml/default/default/template/jaro_myscript", "app/design/adminhtml/default/default/template/jaro_myscript"],
       ["skin/frontend/workbench/default", "skin/frontend/workbench/default"],
-      ["js/jaro_myscript", "js/jaro_myscript"],
-      ["index.php.template", "index.php.template"],
-      ["app/etc/modules/Jaro_MyScript.xml", "app/etc/modules/Jaro_MyScript.xml"],
-      ["app/code/local/Jaro/MyScript", "app/code/local/Jaro/MyScript"]
+      ["index.php.template", "index.php.template"]
     ]
   }
 }

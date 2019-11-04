@@ -4,11 +4,3 @@ app/code/community/Workbench/PlainTable/   app/code/community/Workbench/PlainTab
 app/design/frontend/workbench/default/   app/design/frontend/workbench/default/
 skin/frontend/workbench/default/   skin/frontend/workbench/default/
 index.php.template index.php.template
-
-#Jaro MyScript
-app/etc/modules/Jaro_MyScript.xml   app/etc/modules/Jaro_MyScript.xml
-app/code/local/Jaro/MyScript/   app/code/local/Jaro/MyScript/
-app/design/adminhtml/default/default/layout/jaro_myscript.xml   app/design/adminhtml/default/default/layout/jaro_myscript.xml
-app/design/adminhtml/default/default/template/jaro_myscript/   app/design/adminhtml/default/default/template/jaro_myscript/
-js/jaro_myscript/ js/jaro_myscript/
-

@@ -1,2 +1,2 @@
 # Magento-Jaro_Workbench-Extension
-Workbench for MyScript
+Workbench plaintable for my scripts
