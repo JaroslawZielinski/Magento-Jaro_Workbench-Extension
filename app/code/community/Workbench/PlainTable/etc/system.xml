@@ -23,6 +23,7 @@
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
                     <fields>
                         <navigation_routers translate="label">
                             <label>Navigation Routers</label>
@@ -35,6 +36,74 @@
                         </navigation_routers>
                     </fields>
                 </navigation>
+                <my_content translate="label">
+                    <label>My Content</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <enable translate="label">
+                            <label>Enable</label>
+                            <sort_order>10</sort_order>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <show_in_default>1</show_in_default>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </enable>
+                        <occupation translate="label">
+                            <label>Occupation</label>
+                            <comment><![CDATA[Write <strong>Your occupation title</strong> here.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                        </occupation>
+                        <fullname translate="label">
+                            <label>Full Name</label>
+                            <comment><![CDATA[Write <strong>Name</strong> and <strong>Surname</strong> here.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                        </fullname>
+                        <phone translate="label">
+                            <label>Phone</label>
+                            <comment><![CDATA[Write <strong>Phone</strong> number here or leave empty.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                        </phone>
+                        <email translate="label">
+                            <label>Address E-mail</label>
+                            <comment><![CDATA[Write <strong>e-mail</strong> here or leave empty.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                        </email>
+                    </fields>
+                </my_content>
             </groups>
         </plaintable_general>
     </sections>

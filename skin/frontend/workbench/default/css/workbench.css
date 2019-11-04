@@ -1,7 +1,7 @@
 body {
     padding-top: 5rem;
 }
-.task1 {
+.workbench {
     padding: 0px 1.5rem;
     text-align: center;
 }
@@ -10,7 +10,6 @@ body {
     background-color: lightgrey!important;
 }
 
-.ssh-style {
-    font-family: monospace,monospace;
-    font-size: 14px;
+.col-main {
+    padding: 0px 20px 0px 25px;
 }

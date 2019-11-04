@@ -56,6 +56,13 @@
             <navigation>
                 <navigation_routers>a:1:{s:18:"_1571982790353_353";a:4:{s:4:"name";s:5:"Admin";s:4:"path";s:5:"admin";s:5:"order";s:3:"120";s:11:"auth_status";s:1:"0";}}</navigation_routers>
             </navigation>
+            <my_content>
+                <enable>1</enable>
+                <occupation><![CDATA[PHP Developer]]></occupation>
+                <fullname><![CDATA[Jarosław Zieliński]]></fullname>
+                <phone><![CDATA[+48 737 606 919]]></phone>
+                <email><![CDATA[jarek.zielinski82@gmail.com]]></email>
+            </my_content>
         </plaintable_general>
     </default>
 </config>

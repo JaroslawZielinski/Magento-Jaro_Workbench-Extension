@@ -8,7 +8,7 @@
                 <remove name="optional_zip_countries"/>
                 <action method="addItem"><type>skin_css</type><name>css/bootstrap.min.css</name></action>
                 <action method="addItem"><type>skin_css</type><name>css/bootstrap-theme.min.css</name></action>
-                <action method="addItem"><type>skin_css</type><name>css/task1.css</name></action>
+                <action method="addItem"><type>skin_css</type><name>css/workbench.css</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/jquery-3.3.1.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/popper.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/bootstrap.min.js</name></action>
@@ -38,7 +38,11 @@
 
         <reference name="content">
             <remove name="page_content_heading"/>
-            <block type="core/template" name="my-content" template="workbench/plaintable/mycontent.phtml"/>
+            <block type="workbench_plaintable/myContent" name="my-content">
+                <action method="setTemplate" ifconfig="plaintable_general/my_content/enable">
+                    <template>workbench/plaintable/mycontent.phtml</template>
+                </action>
+            </block>
         </reference>
     </plaintable_page>
 

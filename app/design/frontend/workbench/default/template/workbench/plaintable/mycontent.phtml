@@ -1,6 +1,10 @@
-<div class="task1">
-    <h1>PHP Developer</h1>
-    <p class="lead">Jarosław Zieliński</p>
-    <p>phone: +48 737 606 919</p>
-    <p>e-mail: jarek.zielinski82@gmail.com</p>
+<div class="workbench">
+    <h1><?=$this->getOccupation()?></h1>
+    <p class="lead"><?=$this->getFullName()?></p>
+    <?php if (!empty($phone = $this->getPhone())) :?>
+    <p>phone: <?=$phone?></p>
+    <?php endif; ?>
+    <?php if (!empty($email = $this->getEmail())) : ?>
+    <p>e-mail: <?=$email?></p>
+    <?php endif;?>
 </div>
