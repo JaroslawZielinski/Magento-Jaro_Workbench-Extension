@@ -1,6 +1,7 @@
 <?php
 
-require_once __DIR__ . '../../../abstract.php';
+require_once 'web/shell/abstract.php';
+require_once 'web/app/bootstrap.php';
 
 /**
  * Class Workbench_Setup_Website_Workbench_As_Default_Shell

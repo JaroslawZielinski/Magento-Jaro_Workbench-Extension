@@ -13,7 +13,13 @@
     "map" : [
       ["app/etc/modules/Workbench_PlainTable.xml", "app/etc/modules/Workbench_PlainTable.xml"],
       ["app/code/community/Workbench/PlainTable", "app/code/community/Workbench/PlainTable"],
-      ["app/design/frontend/workbench/default", "app/design/frontend/workbench/default"],
+      ["app/design/frontend/workbench/default/layout/workbench", "app/design/frontend/workbench/default/layout/workbench"],
+      ["app/design/frontend/workbench/default/layout/page.xml", "app/design/frontend/workbench/default/layout/page.xml"],
+      ["app/design/frontend/workbench/default/template/customer/widget", "app/design/frontend/workbench/default/template/customer/widget"],
+      ["app/design/frontend/workbench/default/template/page/html", "app/design/frontend/workbench/default/template/page/html"],
+      ["app/design/frontend/workbench/default/template/page/template", "app/design/frontend/workbench/default/template/page/template"],
+      ["app/design/frontend/workbench/default/template/persistent/customer/form", "app/design/frontend/workbench/default/template/persistent/customer/form"],
+      ["app/design/frontend/workbench/default/template/workbench/plaintable", "app/design/frontend/workbench/default/template/workbench/plaintable"],
       ["skin/frontend/workbench/default", "skin/frontend/workbench/default"],
       ["shell/workbench/setup-website-workbench-as-default", "shell/workbench/setup-website-workbench-as-default"],
       ["index.php.template", "index.php.template"]
