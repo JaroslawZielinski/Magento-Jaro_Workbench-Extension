@@ -3,4 +3,5 @@ app/etc/modules/Workbench_PlainTable.xml   app/etc/modules/Workbench_PlainTable.
 app/code/community/Workbench/PlainTable/   app/code/community/Workbench/PlainTable/
 app/design/frontend/workbench/default/   app/design/frontend/workbench/default/
 skin/frontend/workbench/default/   skin/frontend/workbench/default/
+shell/workbench/setup-website-workbench-as-default/ shell/workbench/setup-website-workbench-as-default/
 index.php.template index.php.template
