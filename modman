@@ -8,6 +8,7 @@ app/design/frontend/workbench/default/layout/page.xml   app/design/frontend/work
 app/design/frontend/workbench/default/template/customer/widget/   app/design/frontend/workbench/default/template/customer/widget/
 app/design/frontend/workbench/default/template/page/html/   app/design/frontend/workbench/default/template/page/html/
 app/design/frontend/workbench/default/template/page/template/   app/design/frontend/workbench/default/template/page/template/
+app/design/frontend/workbench/default/template/page/1column.phtml   app/design/frontend/workbench/default/template/page/1column.phtml
 app/design/frontend/workbench/default/template/persistent/customer/form/   app/design/frontend/workbench/default/template/persistent/customer/form/
 app/design/frontend/workbench/default/template/workbench/plaintable/   app/design/frontend/workbench/default/template/workbench/plaintable/
 

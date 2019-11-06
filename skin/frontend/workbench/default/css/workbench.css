@@ -13,3 +13,7 @@ body {
 .col-main {
     padding: 0px 20px 0px 25px;
 }
+
+ul.messages {
+    list-style-type: none;
+}
