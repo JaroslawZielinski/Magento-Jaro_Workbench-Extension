@@ -6,15 +6,6 @@
         </Workbench_PlainTable>
     </modules>
     <global>
-        <models>
-            <workbench_plaintable>
-                <class>Workbench_PlainTable_Model</class>
-                <resourceModel>workbench_plaintable_resource</resourceModel>
-            </workbench_plaintable>
-            <workbench_plaintable_resource>
-                <class>Workbench_PlainTable_Model_Resource</class>
-            </workbench_plaintable_resource>
-        </models>
         <blocks>
             <workbench_plaintable>
                 <class>Workbench_PlainTable_Block</class>
@@ -60,8 +51,7 @@
                 <enable>1</enable>
                 <occupation><![CDATA[PHP Developer]]></occupation>
                 <fullname><![CDATA[Jarosław Zieliński]]></fullname>
-                <phone><![CDATA[+48 737 606 919]]></phone>
-                <email><![CDATA[jarek.zielinski82@gmail.com]]></email>
+                <email><![CDATA[jzielinski@pandagroup.co]]></email>
             </my_content>
         </plaintable_general>
     </default>
