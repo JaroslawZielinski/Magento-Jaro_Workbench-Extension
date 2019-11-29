@@ -8,10 +8,12 @@
                 <remove name="optional_zip_countries"/>
                 <action method="addItem"><type>skin_css</type><name>css/bootstrap.min.css</name></action>
                 <action method="addItem"><type>skin_css</type><name>css/bootstrap-theme.min.css</name></action>
+                <action method="addItem"><type>skin_css</type><name>css/bootstrap-toggle.min.css</name></action>
                 <action method="addItem"><type>skin_css</type><name>css/workbench.css</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/jquery-3.3.1.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/popper.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/bootstrap.min.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/bootstrap-toggle.min.js</name></action>
             </reference>
 
             <reference name="header">
