@@ -7,7 +7,7 @@ $installer->startSetup();
 /** @var $website Mage_Core_Model_Website */
 $website = Mage::getModel('core/website');
 $website->setCode('workbench')
-    ->setName('Worbench')
+    ->setName('Workbench')
     ->save();
 
 //#addStoreGroup
