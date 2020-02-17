@@ -22,7 +22,8 @@
       ["app/design/frontend/workbench/default/template/workbench/plaintable", "app/design/frontend/workbench/default/template/workbench/plaintable"],
       ["skin/frontend/workbench/default", "skin/frontend/workbench/default"],
       ["shell/workbench/setup-website-workbench-as-default", "shell/workbench/setup-website-workbench-as-default"],
-      ["index.php.template", "index.php.template"]
+      ["index.php.template", "index.php.template"],
+      [".htaccess", ".htaccess"]
     ]
   }
 }
