@@ -19,3 +19,4 @@ shell/workbench/setup-website-workbench-as-default/ shell/workbench/setup-websit
 
 #index improvements
 index.php.template index.php.template
+.htaccess .htaccess
